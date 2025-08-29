@@ -15,9 +15,14 @@ function App() {
     <div className="bg-gray-100 min-h-screen font-sans">
       <div className="container mx-auto p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card {...CORE_CONCEPTS[0]} />
-          <Card {...CORE_CONCEPTS[1]} />
-          <Card {...CORE_CONCEPTS[2]} />
+          {CORE_CONCEPTS.map((item) => (
+            <Card
+              key={item.title}
+              image={item.image}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
         </div>
         <div className="py-12">
           <menu className="flex justify-center gap-6 py-2">
@@ -34,7 +39,9 @@ function App() {
           </menu>
 
           {!selectTopic ? (
-            <p>select topic</p>
+            <p className="text-center text-gray-500 py-12 text-2xl italic">
+              No topic selected
+            </p>
           ) : (
             <div className="py-6 bg-white shadow-md rounded-lg p-6">
               <h3 className="text-xl font-bold text-gray-800">
