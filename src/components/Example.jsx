@@ -13,12 +13,12 @@ export default function Examples() {
   return (
     <div className="py-12">
       <menu className="flex justify-center gap-6 py-2">
-        <TabButton onSelect={() => handleSelectTab("jsx")}>JSX</TabButton>
-        <TabButton onSelect={() => handleSelectTab("components")}>
+        <TabButton onClick={() => handleSelectTab("jsx")}>JSX</TabButton>
+        <TabButton onClick={() => handleSelectTab("components")}>
           Components
         </TabButton>
-        <TabButton onSelect={() => handleSelectTab("props")}>Props</TabButton>
-        <TabButton onSelect={() => handleSelectTab("state")}>State</TabButton>
+        <TabButton onClick={() => handleSelectTab("props")}>Props</TabButton>
+        <TabButton onClick={() => handleSelectTab("state")}>State</TabButton>
       </menu>
 
       {!selectTopic ? (
